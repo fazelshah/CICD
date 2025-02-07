@@ -2,6 +2,11 @@ pipeline
 {
     agent any
 stages{
+stage('Remove Container Images'){
+            steps{
+                sh 'docker rmi -f $(docker images -a -q)'
+            }
+        }
 
 stage ('build,upload and run image')
 {
