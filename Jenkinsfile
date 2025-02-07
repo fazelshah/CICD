@@ -22,7 +22,7 @@ sh 'docker run -itd -p 3000:3000 --name nodejs-container.${BUILD_NUMBER} fazelsh
     stage ('remove images')
     {
 steps {
- docker rmi fazelshah/nodejs-docker-app:v1.${BUILD_NUMBER}      
+  sh 'docker rmi fazelshah/nodejs-docker-app:v1.${BUILD_NUMBER}'      
 } 
     }
 }
